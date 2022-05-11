@@ -35,7 +35,7 @@ container.addEventListener("click", (e) => {
     checkCollisionBarre();
     checkCollision();
     Fin();
-  }, 10);
+  }, 9);
 });
 
 function moveBall() {
@@ -68,19 +68,30 @@ function checkCollisionBarre() {
     balle.style.setProperty("--topBalle", currentPositionTop + "px");
     if (
       currentPositionLeft >= barreLeft &&
-      currentPositionLeft <= barreLeft + barreWidth / 2
+      currentPositionLeft <= barreLeft + 20
     ) {
       if (ballDx > 0) {
         ballDx = -ballDx;
+      } else if (ballDx == 0) {
+        ballDx = -2;
       }
       currentPositionLeft += ballDx;
       balle.style.setProperty("--leftBalle", currentPositionLeft + "px");
     } else if (
-      currentPositionLeft >= barreLeft + barreWidth / 2 &&
+      currentPositionLeft >= barreLeft + 20 &&
+      currentPositionLeft <= barreLeft + 40
+    ) {
+      ballDx = 0;
+      currentPositionLeft += ballDx;
+      balle.style.setProperty("--leftBalle", currentPositionLeft + "px");
+    } else if (
+      currentPositionLeft >= barreLeft + 40 &&
       currentPositionLeft <= barreLeft + barreWidth
     ) {
       if (ballDx < 0) {
         ballDx = -ballDx;
+      } else if (ballDx == 0) {
+        ballDx = 2;
       }
       currentPositionLeft += ballDx;
       balle.style.setProperty("--leftBalle", currentPositionLeft + "px");
