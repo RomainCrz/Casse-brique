@@ -1,0 +1,60 @@
+body {
+  height: 100vh;
+  cursor: none;
+}
+
+.container {
+  margin: auto;
+  height: 100%;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+}
+.app {
+  background: rgb(188, 239, 255);
+  height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: -2;
+  transition: 1s;
+  text-align: center;
+}
+.win {
+  background: rgb(0, 140, 255);
+  color: white;
+  font-size: 4rem;
+}
+.lose {
+  background: black;
+  color: white;
+  font-size: 4rem;
+}
+.brique_container {
+  margin: auto;
+  position: relative;
+}
+.brique {
+  position: absolute;
+  background: rgb(84, 154, 245);
+}
+.barre {
+  position: absolute;
+  width: 60px;
+  height: 6px;
+  border-radius: 50px;
+  background: blue;
+  bottom: 10px;
+  left: var(--left);
+  transform: translateX(0);
+  z-index: -1;
+}
+.balle {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: blue;
+  top: var(--topBalle);
+  left: var(--leftBalle);
+  transform: translate(-50%, -50%);
+}
